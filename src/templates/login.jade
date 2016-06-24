@@ -1,0 +1,43 @@
+doctype
+html
+	head
+		title= errorNo
+	body
+		h1
+			| user login
+		div#loginPanel
+			p
+				| username:
+				input(type="text", value="", placeholder="please input user name")
+			p
+				| password:
+				input(type="password", value="", placeholder="please input password")
+			p
+				a(href="/frame", onclick="doLogin(event)")
+					| login
+		div#errorMessage(style="display: none;")
+
+		script(type='text/javascript').
+			function doLogin(event) {
+				var userName = document.querySelectorAll('#loginPanel input[type="text"]')[0].value,
+					password = document.querySelectorAll('#loginPanel input[type="password"]')[0].value,
+					//button = panel.querySelector('a')[0],
+					errorPanel = document.querySelector('#errorMessage'),
+					error = {};
+
+				if(!userName || userName === ''){
+					error.msg = 'please input the correct password';
+				}
+
+				if(!password || password === ''){
+					error.msg = 'please input the correct password';
+				}
+
+				if(error.msg && error.msg !== ''){
+					errorPanel.innerHTML = error.msg;
+					errorPanel.style.display = 'block';
+					event.preventDefault();
+
+					return false;
+				}
+			}

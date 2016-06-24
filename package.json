@@ -1,0 +1,22 @@
+{
+  "name": "jadAppInNode",
+  "version": "0.1.0",
+  "description": "just test the jade integrate with node server side",
+  "scripts": {
+	  "es6": "npm run es-checker"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/appletxm/nodejs-jade"
+  },
+  "dependencies": {
+    "jade": "^1.11.0",
+    "socket.io": "^1.4.6"
+  },
+  "devDependencies": {
+  },
+  "keywords": [
+    "jade",
+    "nodejs"
+  ]
+}
